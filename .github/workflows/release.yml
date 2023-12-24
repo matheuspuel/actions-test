@@ -33,7 +33,11 @@ jobs:
       - name: Get Deployment Type
         uses: ./.github/actions/getDeploymentType
         id: type
-      - name: Get the output
-        run: echo "Is update ${{ steps.type.outputs.isUpdate == false }}"
+      - name: Update
+        if: steps.type.outputs.isUpdate == 'true'
+        run: echo "run update"
+      - name: Build
+        if: steps.type.outputs.isUpdate == 'false'
+        run: echo "run build"
       - run: pnpm changeset tag
       - run: git push --follow-tags
