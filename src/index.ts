@@ -7,6 +7,11 @@ import { runtime } from './runtime'
 import { UIServiceEnv } from './services/UI'
 import { liveUI } from './services/UI/live'
 
+const a = 1
+
+// eslint-disable-next-line functional/no-expression-statements
+a.ab
+
 const appRuntime = pipe(
   Layer.succeedContext(runtime.context),
   Layer.provideMerge(Layer.succeed(UIServiceEnv, liveUI())),

@@ -3,10 +3,6 @@
 import { describe, expect, test } from 'vitest'
 import { QS, Timestamp } from '.'
 
-test('fail', () => {
-  expect(1).toBe(2)
-})
-
 describe('QueryState.all', () => {
   test('struct', () => {
     const res = QS.all({
