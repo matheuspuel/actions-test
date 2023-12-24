@@ -7,7 +7,7 @@ const getIsPatch = (version: string) => {
   return (
     parts.length === 3 && parts.every(p => p.match(/\d+/)) && parts[2] !== '0'
   )
-}
+} 
 
 const isPatch = getIsPatch(version)
 
