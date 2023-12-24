@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+      APP_VARIANT: ${{github.ref_name}}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
