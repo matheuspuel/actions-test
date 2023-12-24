@@ -3,5 +3,4 @@
   "compilerOptions": {
     "noEmit": true,
   },
-  "include": ["./**/*", "./.eslintrc.js", "./.eslintrc.production.js"],
 }

@@ -19,6 +19,11 @@
       "fp": ["src/utils/fp"],
     },
   },
-  "include": ["**/*", ".deploy/action.ts"],
+  "include": [
+    "**/*",
+    ".deploy/action.ts",
+    "./.eslintrc.js",
+    "./.eslintrc.production.js",
+  ],
   "exclude": ["node_modules"],
 }
