@@ -3,7 +3,8 @@ name: Release
 on:
   push:
     branches:
-      - master
+      - production
+      - staging
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -35,14 +36,16 @@ jobs:
       - run: pnpm run lint
       - run: pnpm run check
       - run: pnpm run test:ci
-      - name: Get Deployment Type
-        uses: ./.github/actions/getDeploymentType
-        id: type
+      - name: Get Last Version Bump
+        uses: ./.github/actions/getLastVersionBump
+        id: version
       - name: Update
-        if: steps.type.outputs.isUpdate == 'true'
+        if: ${{  (steps.version.outputs.lastVersionBump == 'patch') }}
         run: eas update --non-interactive --auto --channel ${{github.ref_name}} --platform android
       - name: Build
-        if: steps.type.outputs.isUpdate == 'false'
+        if: ${{ !(steps.version.outputs.lastVersionBump == 'patch') }}
         run: eas build --non-interactive --profile ${{github.ref_name}} --platform android
       - run: pnpm changeset tag
+        if: github.ref_name == 'production'
       - run: git push --follow-tags
+        if: github.ref_name == 'production'

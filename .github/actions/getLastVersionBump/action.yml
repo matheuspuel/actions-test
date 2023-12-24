@@ -1,0 +1,8 @@
+name: 'Get last version bump'
+description: 'Check if the last version bump is patch, minor or major'
+outputs:
+  lastVersionBump:
+    description: 'Last version bump'
+runs:
+  using: 'node20'
+  main: 'index.js'
