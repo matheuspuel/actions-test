@@ -1,0 +1,8 @@
+name: 'Get deployment type'
+description: 'Check whether should release an update or create a build'
+outputs:
+  isUpdate:
+    description: 'Whether it should release an update or not'
+runs:
+  using: 'node20'
+  main: 'index.js'
