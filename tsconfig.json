@@ -1,7 +1,15 @@
 {
-  "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "baseUrl": ".",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "jsx": "react-native",
+    "lib": ["DOM", "ESNext"],
+    "target": "ESNext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "noFallthroughCasesInSwitch": true,
@@ -11,4 +19,6 @@
       "fp": ["src/utils/fp"],
     },
   },
+  "include": ["**/*", ".deploy/action.ts"],
+  "exclude": ["node_modules", "babel.config.js", "metro.config.js"],
 }
