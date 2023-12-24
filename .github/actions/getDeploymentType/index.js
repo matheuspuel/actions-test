@@ -4,6 +4,8 @@ const core = require('@actions/core')
 try {
   if (typeof version !== 'string') throw new Error('Invalid version')
 
+  console.log('Version:', version)
+
   /**
    * @param {string} version
    */
@@ -15,7 +17,7 @@ try {
   }
 
   const isPatch = getIsPatch(version)
-  console.log(isPatch)
+  console.log('Is update:', isPatch)
   core.setOutput('isUpdate', isPatch)
 } catch (error) {
   core.setFailed(error.message)
