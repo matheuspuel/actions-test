@@ -17,7 +17,7 @@
     "coverage": "vitest --run --coverage related",
     "coverage:all": "vitest --run --coverage",
     "eas-build-pre-install": "npm i -g pnpm@8.11.0",
-    "deploy": "node .deploy/action.js",
+    "deploy": "ts-node .deploy/action.ts",
     "build:development": "eas build --platform android --profile development",
     "build:preview": "eas build --platform android --profile preview",
     "build:staging": "eas build --platform android --profile staging",

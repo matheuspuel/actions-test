@@ -70,8 +70,7 @@ const getConfig = (): ExpoConfig => ({
         '.png',
     },
   },
-  web: { favicon: './assets/favicon.png',
-  },
+  web: { favicon: './assets/favicon.png' },
   extra: {
     envName,
   },
