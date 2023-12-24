@@ -30,8 +30,8 @@ const getConfig = (): ExpoConfig => ({
   },
   backgroundColor: background,
   updates: {
-    fallbackToCacheTimeout: 0,
-    url: 'https://u.expo.dev/69f8b414-3fcb-4441-9883-caa7146c55b2',
+    fallbackToCacheTimeout: 2000,
+    url: 'https://u.expo.dev/a070db67-faf9-4b1b-952c-829bd3fe53c7',
   },
   assetBundlePatterns: ['**/*'],
   packagerOpts: { config: 'metro.config.js' },
