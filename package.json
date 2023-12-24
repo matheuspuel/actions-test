@@ -1,7 +1,7 @@
 {
   "name": "actions-test",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "start": "cross-env APP_VARIANT=development expo start",
     "android": "cross-env APP_VARIANT=development expo run:android",
@@ -45,7 +45,7 @@
     "expo-splash-screen": "~0.20.5",
     "expo-status-bar": "~1.6.0",
     "expo-system-ui": "~2.4.0",
-    "expo-updates": "~0.18.17",
+    "expo-updates": "~0.18.18",
     "fast-text-encoding": "^1.0.6",
     "react": "18.2.0",
     "react-native": "0.72.6",
