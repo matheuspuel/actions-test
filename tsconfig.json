@@ -1,0 +1,14 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noFallthroughCasesInSwitch": true,
+    "noErrorTruncation": true,
+    "paths": {
+      "src/*": ["src/*"],
+      "fp": ["src/utils/fp"],
+    },
+  },
+}

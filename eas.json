@@ -1,0 +1,62 @@
+{
+  "cli": {
+    "version": ">= 0.44.1",
+    "appVersionSource": "remote",
+    "requireCommit": true
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "channel": "preview",
+      "env": { "APP_VARIANT": "preview" },
+      "distribution": "internal"
+    },
+    "staging": {
+      "channel": "staging",
+      "env": { "APP_VARIANT": "staging" },
+      "distribution": "internal"
+    },
+    "production": {
+      "channel": "production",
+      "env": { "APP_VARIANT": "production" },
+      "distribution": "internal",
+      "autoIncrement": true
+    },
+    "development-local": {
+      "developmentClient": true,
+      "env": { "ANDROID_SDK_ROOT": "/usr/lib/android-sdk" },
+      "distribution": "internal"
+    },
+    "preview-local": {
+      "channel": "preview",
+      "env": {
+        "APP_VARIANT": "preview",
+        "ANDROID_SDK_ROOT": "/usr/lib/android-sdk"
+      },
+      "distribution": "internal"
+    },
+    "staging-local": {
+      "channel": "staging",
+      "env": {
+        "APP_VARIANT": "staging",
+        "ANDROID_SDK_ROOT": "/usr/lib/android-sdk"
+      },
+      "distribution": "internal"
+    },
+    "production-local": {
+      "channel": "production",
+      "env": {
+        "APP_VARIANT": "production",
+        "ANDROID_SDK_ROOT": "/usr/lib/android-sdk"
+      },
+      "distribution": "internal",
+      "autoIncrement": true
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
