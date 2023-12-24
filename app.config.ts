@@ -34,9 +34,7 @@ const getConfig = (): ExpoConfig => ({
     url: 'https://u.expo.dev/69f8b414-3fcb-4441-9883-caa7146c55b2',
   },
   assetBundlePatterns: ['**/*'],
-  packagerOpts: {
-    config: 'metro.config.js',
-  },
+  packagerOpts: { config: 'metro.config.js' },
   ios: {
     supportsTablet: true,
     bundleIdentifier:
@@ -73,6 +71,7 @@ const getConfig = (): ExpoConfig => ({
   web: { favicon: './assets/favicon.png' },
   extra: {
     envName,
+    eas: { projectId: 'a070db67-faf9-4b1b-952c-829bd3fe53c7' },
   },
 })
 
