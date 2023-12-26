@@ -55,8 +55,6 @@ jobs:
         with:
           platform: android
           profile: ${{github.ref_name}}
-      - if: ${{ !(steps.version.outputs.lastVersionBump == 'patch') }}
-        run: echo "${{steps.getBuildUrl.outputs.buildUrl}}"
       - name: Configure Git User
         run: |
           git config user.name "GitHub Actions"
@@ -65,3 +63,10 @@ jobs:
         run: pnpm changeset tag
       - if: github.ref_name == 'production'
         run: git push origin --follow-tags
+      - if: ${{ !(steps.version.outputs.lastVersionBump == 'patch') && github.ref_name == 'production' }}
+        run: curl http://expo.dev/artifacts/eas/9fWqU2aSJzPev1T2xkKpZx.apk -o /tmp/application-android.apk
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: ${{ !(steps.version.outputs.lastVersionBump == 'patch') && github.ref_name == 'production' }}
+        with:
+          files: /tmp/application-android.apk
