@@ -49,15 +49,12 @@ jobs:
         if: ${{ false }}
         # if: ${{ !(steps.version.outputs.lastVersionBump == 'patch') }}
         run: eas build --non-interactive --profile ${{github.ref_name}} --platform android
-      - name: Get builds
-        id: builds
-        if: ${{ !(steps.version.outputs.lastVersionBump == 'patch') }}
-        run: echo "buildListJson=$(eas build:list --non-interactive --json --buildProfile ${{github.ref_name}} --platform android)" >> $GITHUB_OUTPUT
       - if: ${{ !(steps.version.outputs.lastVersionBump == 'patch') }}
         id: getBuildUrl
         uses: ./.github/actions/getBuildUrl
         with:
-          buildListJson: ${{steps.builds.outputs.buildListJson}}
+          platform: android
+          profile: ${{github.ref_name}}
       - if: ${{ !(steps.version.outputs.lastVersionBump == 'patch') }}
         run: echo "${{steps.getBuildUrl.outputs.buildUrl}}"
       - name: Configure Git User

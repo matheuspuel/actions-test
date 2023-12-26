@@ -1,10 +1,12 @@
 name: 'Get EAS build artifact URL'
 description: 'Get EAS build artifact URL'
 inputs:
-  buildListJson:
-    description: 'List of builds returned by "eas build:list --json" as a JSON string'
+  platform:
+    description: 'Platform'
     required: true
-    default: '[]'
+  profile:
+    description: 'Build profile'
+    required: true
 outputs:
   buildUrl:
     description: 'Build artifact URL'
