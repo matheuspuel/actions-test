@@ -1,0 +1,13 @@
+name: 'Get EAS build artifact URL'
+description: 'Get EAS build artifact URL'
+inputs:
+  buildListJson:
+    description: 'List of builds returned by "eas build:list --json" as a JSON string'
+    required: true
+    default: '[]'
+outputs:
+  buildUrl:
+    description: 'Build artifact URL'
+runs:
+  using: 'node20'
+  main: 'index.js'
