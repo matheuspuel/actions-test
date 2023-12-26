@@ -42,10 +42,12 @@ jobs:
         uses: ./.github/actions/getLastVersionBump
         id: version
       - name: Update
-        if: ${{  (steps.version.outputs.lastVersionBump == 'patch0') }}
+        if: ${{ false }}
+        # if: ${{  (steps.version.outputs.lastVersionBump == 'patch') }}
         run: eas update --non-interactive --auto --channel ${{github.ref_name}} --platform android
       - name: Build
-        if: ${{ !(steps.version.outputs.lastVersionBump == 'patch0') }}
+        if: ${{ false }}
+        # if: ${{ !(steps.version.outputs.lastVersionBump == 'patch') }}
         run: eas build --non-interactive --profile ${{github.ref_name}} --platform android
       - run: pnpm changeset tag
         if: github.ref_name == 'production'
