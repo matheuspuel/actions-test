@@ -51,8 +51,9 @@ jobs:
         run: eas build --non-interactive --profile ${{github.ref_name}} --platform android
       - run: pnpm changeset tag
         if: github.ref_name == 'production'
-      - run: git push --follow-tags
-        if: github.ref_name == 'production'
+      # - run: git push --follow-tags
+      #   if: github.ref_name == 'production'
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           push_options: '--follow-tags'
+          skip_dirty_check: true
