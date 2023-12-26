@@ -64,7 +64,7 @@ jobs:
       - if: github.ref_name == 'production'
         run: git push origin --follow-tags
       - if: ${{ !(steps.version.outputs.lastVersionBump == 'patch') && github.ref_name == 'production' }}
-        run: curl http://expo.dev/artifacts/eas/9fWqU2aSJzPev1T2xkKpZx.apk -LO /tmp/application-android.apk
+        run: curl http://expo.dev/artifacts/eas/9fWqU2aSJzPev1T2xkKpZx.apk -L -o /tmp/application-android.apk
       - name: Release
         uses: softprops/action-gh-release@v1
         if: ${{ !(steps.version.outputs.lastVersionBump == 'patch') && github.ref_name == 'production' }}
