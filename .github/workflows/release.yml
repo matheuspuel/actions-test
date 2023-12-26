@@ -49,11 +49,15 @@ jobs:
         if: ${{ false }}
         # if: ${{ !(steps.version.outputs.lastVersionBump == 'patch') }}
         run: eas build --non-interactive --profile ${{github.ref_name}} --platform android
+      - name: Configure Git
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@users.noreply.github.com"
       - run: pnpm changeset tag
         if: github.ref_name == 'production'
-      # - run: git push --follow-tags
-      #   if: github.ref_name == 'production'
-      - uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          push_options: '--follow-tags'
-          skip_dirty_check: true
+      - run: git push origin --follow-tags
+        if: github.ref_name == 'production'
+      # - uses: stefanzweifel/git-auto-commit-action@v5
+      #   with:
+      #     push_options: '--follow-tags'
+      #     skip_dirty_check: true
