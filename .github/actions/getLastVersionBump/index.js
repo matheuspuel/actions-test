@@ -19,6 +19,7 @@ try {
   const lastVersionBump = getLastVersionBump(version)
   console.log('Last version bump:', lastVersionBump)
   core.setOutput('lastVersionBump', lastVersionBump)
+  core.setOutput('version', version)
 } catch (error) {
   core.setFailed(error.message)
 }

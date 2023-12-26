@@ -70,3 +70,4 @@ jobs:
         if: ${{ !(steps.version.outputs.lastVersionBump == 'patch') && github.ref_name == 'production' }}
         with:
           files: /tmp/application-android.apk
+          tag_name: v${{ steps.version.outputs.version }}
