@@ -79,7 +79,8 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             Actions App
-            https://github.com/matheuspuel/actions-test/releases/latest/download/application-android.apk
 
             New version available: v${{ steps.version.outputs.version }}
             ${{ steps.version.outputs.lastVersionBump == 'patch' && 'The app will update automatically' || 'Download the new version to get the update' }}
+
+            https://github.com/matheuspuel/actions-test/releases/latest/download/application-android.apk
