@@ -4,4 +4,8 @@
 
 ### Patch Changes
 
-- Created new app
+- Created new version
+- Multiline
+
+  Message
+  Update
