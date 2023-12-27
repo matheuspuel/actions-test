@@ -18,7 +18,7 @@ export const darkTheme = {
     },
     white: hex('#ffffff'),
     black: hex('#000000'),
-    primary: hex('#171717'),
+    primary: hex('#488ec0'),
     secondary: hex('#a5d6fa'),
     success: hex('#4f9537'),
     error: hex('#b94545'),
