@@ -35,8 +35,8 @@ jobs:
           token: ${{ secrets.EXPO_TOKEN }}
       - name: Install Dependencies
         run: pnpm install
-      - run: pnpm run lint
       - run: pnpm run check
+      - run: pnpm run lint
       - run: pnpm run test:ci
       - name: Get Last Version Bump
         uses: ./.github/actions/getLastVersionBump
