@@ -12,7 +12,7 @@ const appRuntime = pipe(
   Layer.provideMerge(Layer.succeed(UIServiceEnv, liveUI())),
   Layer.toRuntime,
   F.scoped,
-  F.cached,
+  F.cached, 
   F.flatten,
   F.runSync,
 )

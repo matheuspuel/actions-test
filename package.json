@@ -9,7 +9,7 @@
     "web": "cross-env APP_VARIANT=development expo start --web",
     "experiment": "ts-node-dev --respawn --transpile-only -r tsconfig-paths/register src/experiment.ts",
     "lint": "eslint . --config .eslintrc.production.js --max-warnings 0",
-    "lint:fix": "eslint . --config .eslintrc.production.js --fix",
+    "lint:fix": "eslint . --config .eslintrc.production.js --fix --max-warnings 0",
     "check": "tsc -b tsconfig.json",
     "test": "vitest",
     "test:ci": "vitest --run",
