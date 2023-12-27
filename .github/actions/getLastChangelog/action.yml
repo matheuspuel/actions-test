@@ -1,0 +1,8 @@
+name: 'Get last changelog'
+description: 'Get last changelog'
+outputs:
+  lastChangelog:
+    description: 'Last changelog'
+runs:
+  using: 'node20'
+  main: 'index.js'
