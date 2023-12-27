@@ -10,7 +10,7 @@
 
 - Created new version
 - Had to
-  change many thing
+  change many things
 
   and use multiline message
 
