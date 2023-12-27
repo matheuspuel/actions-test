@@ -85,6 +85,7 @@ jobs:
             New version available: v${{ steps.version.outputs.version }}
             ${{ steps.version.outputs.lastVersionBump == 'patch' && 'The app will update automatically' || 'Download the new version to get the update' }}
 
+            Changes:
             ${{steps.changelog.outputs.lastChangelog}}
 
             Download App: https://github.com/matheuspuel/actions-test/releases/latest/download/application-android.apk
