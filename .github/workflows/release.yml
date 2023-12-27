@@ -39,7 +39,7 @@ jobs:
       - run: pnpm run check
       - run: pnpm run test:ci
       - name: Get Last Version Bump
-        uses: ./.github/actions/getLastVersionBump
+        uses: ./.githubR/actions/getLastVersionBump
         id: version
       - name: Update
         if: ${{ false }}
@@ -89,3 +89,13 @@ jobs:
             ${{steps.changelog.outputs.lastChangelog}}
 
             Download App: https://github.com/matheuspuel/actions-test/releases/latest/download/application-android.apk
+      - name: Send Telegram Error Message
+        uses: appleboy/telegram-action@master
+        if: job.status == 'failure'
+        with:
+          to: 845699845
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            Actions App
+            An error ocurred while running Release workflow.
+            Branch: ${{ github.ref_name }}
