@@ -17,8 +17,6 @@ jobs:
     env:
       APP_VARIANT: ${{github.ref_name}}
     steps:
-      - name: Force failure
-        uses: ./inexistent
       - name: Checkout Repo
         uses: actions/checkout@v3
       - name: Setup pnpm
@@ -44,12 +42,10 @@ jobs:
         uses: ./.github/actions/getLastVersionBump
         id: version
       - name: Update
-        if: ${{ false }}
-        # if: ${{  (steps.version.outputs.lastVersionBump == 'patch') }}
+        if: ${{  (steps.version.outputs.lastVersionBump == 'patch') }}
         run: eas update --non-interactive --auto --channel ${{github.ref_name}} --platform android
       - name: Build
-        if: ${{ false }}
-        # if: ${{ !(steps.version.outputs.lastVersionBump == 'patch') }}
+        if: ${{ !(steps.version.outputs.lastVersionBump == 'patch') }}
         run: eas build --non-interactive --profile ${{github.ref_name}} --platform android
       - if: ${{ !(steps.version.outputs.lastVersionBump == 'patch') }}
         id: getBuildUrl
