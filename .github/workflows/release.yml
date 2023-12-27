@@ -101,3 +101,5 @@ jobs:
             Actions App
             An error ocurred while running Release workflow.
             Branch: ${{ github.ref_name }}
+
+            Open logs: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
