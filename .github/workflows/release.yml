@@ -17,6 +17,17 @@ jobs:
     env:
       APP_VARIANT: ${{github.ref_name}}
     steps:
+      - name: Send Telegram Message
+        uses: appleboy/telegram-action@master
+        with:
+          to: 845699845
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            ${{ github.actor }} created commit:
+
+            Repository: ${{ github.repository }}
+
+            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
       - name: Checkout Repo
         uses: actions/checkout@v3
       - name: Setup pnpm
