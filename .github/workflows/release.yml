@@ -60,7 +60,7 @@ jobs:
       - if: github.ref_name == 'production'
         run: pnpm changeset tag
       - if: github.ref_name == 'production'
-        run: git push origin --follow-tags
+        run: git push origin --tags
       - if: ${{ !(steps.version.outputs.lastVersionBump == 'patch') && github.ref_name == 'production' }}
         run: curl ${{ steps.getBuildUrl.outputs.buildUrl }} -L -o /tmp/application-android.apk
       - name: Release
