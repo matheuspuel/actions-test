@@ -14,7 +14,7 @@ const appRuntime = pipe(
   F.scoped,
   F.cached,
   F.flatten,
-  F.runSync,
+  F.runSync, 
 )
 
 // eslint-disable-next-line functional/no-expression-statements
