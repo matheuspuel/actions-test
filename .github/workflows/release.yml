@@ -17,17 +17,6 @@ jobs:
     env:
       APP_VARIANT: ${{github.ref_name}}
     steps:
-      - name: Send Telegram Message
-        uses: appleboy/telegram-action@master
-        with:
-          to: 845699845
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: |
-            ${{ github.actor }} created commit:
-
-            Repository: ${{ github.repository }}
-
-            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
       - name: Checkout Repo
         uses: actions/checkout@v3
       - name: Setup pnpm
@@ -82,3 +71,15 @@ jobs:
         with:
           files: /tmp/application-android.apk
           tag_name: v${{ steps.version.outputs.version }}
+      - name: Send Telegram Message
+        uses: appleboy/telegram-action@master
+        if: github.ref_name == 'production'
+        with:
+          to: 845699845
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            Actions App
+            https://github.com/matheuspuel/actions-test/releases/latest/download/application-android.apk
+
+            New version available: v${{ steps.version.outputs.version }}
+            ${{ steps.version.outputs.lastVersionBump == 'patch' && 'The app will update automatically' || 'Download the new version to get the update' }}
