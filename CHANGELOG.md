@@ -1,5 +1,11 @@
 # actions-test
 
+## 1.4.0
+
+### Minor Changes
+
+- 5b11144: Check for updates available for download on startup
+
 ## 1.3.0
 
 ### Minor Changes
