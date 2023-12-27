@@ -34,5 +34,5 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email "github-actions@users.noreply.github.com"
-      - run: git commit -a -m "Fix lint automatically"
+      - run: if [ -n "$(git status --porcelain)" ]; then git commit -a -m "Fix lint automatically"; else echo "no changes"; fi
       - run: git push origin
