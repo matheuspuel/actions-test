@@ -1,7 +1,7 @@
 {
   "name": "actions-test",
   "private": true,
-  "version": "1.7.2",
+  "version": "1.7.3",
   "scripts": {
     "start": "cross-env APP_VARIANT=development expo start",
     "android": "cross-env APP_VARIANT=development expo run:android",

@@ -1,5 +1,11 @@
 # actions-test
 
+## 1.7.3
+
+### Patch Changes
+
+- c0b4ac0: Teste mensagem
+
 ## 1.4.0
 
 ### Minor Changes
