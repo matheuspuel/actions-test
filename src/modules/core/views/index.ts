@@ -15,6 +15,8 @@ import { F } from 'src/utils/fp'
 import { AppEvent } from '../events'
 import { getAvailableUpdateForDownload } from '../events/version'
 
+// dsfds
+
 export const UIRoot = named('UIRoot')(() => {
   const updateAvailable = useState<{ version: string } | null>(() => null)
   // eslint-disable-next-line functional/no-expression-statements
