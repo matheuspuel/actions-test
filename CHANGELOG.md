@@ -1,5 +1,12 @@
 # actions-test
 
+## 1.7.5
+
+### Patch Changes
+
+- 8eb6a76: Adicionar funcinalidade tal
+- a90851c: corrigir bug tal
+
 ## 1.7.4
 
 ### Patch Changes
