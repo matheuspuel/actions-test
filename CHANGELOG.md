@@ -1,5 +1,12 @@
 # actions-test
 
+## 1.7.6
+
+### Patch Changes
+
+- 3849808: mudar versao
+- da77f0f: alteracao 2
+
 ## 1.7.5
 
 ### Patch Changes
